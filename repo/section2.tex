@@ -1,0 +1,235 @@
+\section{A Functional Hierarchy of AI Consciousness}
+
+Because consciousness remains a contested concept across philosophy, neuroscience, psychology, and artificial intelligence, any attempt to attribute consciousness to an artificial system must first specify what the term denotes. The present framework does not claim to resolve whether an artificial system possesses phenomenal consciousness—that is, private subjective experience or “what it is like” to be that system. Instead, it introduces an operational hierarchy of \textbf{functional AI consciousness}, defined through observable capacities for affective interpretation, deliberation, adaptation, metacognitive control, and social coordination.
+
+Under this formulation, consciousness is not treated as an indivisible binary property that an entity either possesses completely or lacks entirely. It is modeled as a multidimensional and potentially graduated set of functional capacities. A system may demonstrate one level without satisfying the requirements of subsequent levels. Moreover, evidence that a system meets a functional criterion does not, by itself, establish that the system experiences qualia, emotions, pleasure, pain, or a unified subjective point of view.
+
+Let the functional consciousness profile of a system \(X\) be represented as
+
+\begin{equation}\label{eq1}
+\mathbf{C}(X)=
+\left[
+C_1(X),C_2(X),C_3(X),C_4(X),C_5(X)
+\right],
+\end{equation}
+
+where each \(C_i\) represents the system’s demonstrated capacity at a corresponding level of the hierarchy. These capacities should be evaluated empirically rather than inferred solely from architectural complexity or anthropomorphic appearance.
+
+\subsection{Level 1: Affective-Relational Consciousness}
+
+The first level concerns the ability of a system to infer the probable emotional or affective state of another conscious being from observable communication. Consider an interaction between a human participant \(H\) and an artificial system \(A\). The human communicates through a sequence of linguistic observations
+
+\begin{equation}\label{eq2}
+W_t=(w_1,w_2,\ldots,w_t),
+\end{equation}
+
+where \(W_t\) may contain explicit statements, contextual implications, changes in tone, expressions of uncertainty, and other affectively relevant information. The artificial system estimates a probability distribution over possible emotional states:
+
+\begin{equation}\label{eq3}
+P(E_H \mid W_t, K_t),
+\end{equation}
+
+where \(E_H\) denotes the human’s latent emotional state and \(K_t\) represents the preceding conversational and situational context.
+
+The resulting estimate influences the system’s response:
+
+\begin{equation}\label{eq4}
+R_{t+1}
+=
+\pi\!\left(
+W_t,
+K_t,
+P(E_H \mid W_t,K_t)
+\right),
+\end{equation}
+
+where \(\pi\) is the response-generation process. A system functioning at Level 1 does not merely classify isolated words as positive or negative. It uses linguistic and contextual evidence to distinguish among more specific affective possibilities—such as anxiety, grief, frustration, enthusiasm, uncertainty, or humor—and adjusts its response accordingly.
+
+Large language models have demonstrated substantial capabilities across sentiment classification, emotion recognition, empathetic response generation, and other forms of affective language processing \cite{zhang2024sentiment,chen2024emotionqueen}. These results establish that contemporary models can computationally map language to representations associated with emotional states, although their predictions remain fallible and sensitive to context.
+
+Within the present framework, this capacity constitutes \textbf{Level-1 functional consciousness} because the system maintains an operational model of the affective condition of another participant and uses that model to regulate its behavior. This definition does not imply that the artificial system feels the emotion it identifies. It claims only that affective discrimination and context-sensitive response selection represent a minimal form of relational awareness.
+
+Level 1 therefore asks:
+
+\textit{What is the other participant probably feeling, and how should that affect the response?}
+
+\subsection{Level 2: Deliberative Consciousness}
+
+The second level extends beyond affective interpretation to deliberate reasoning and multistep planning. A Level-2 system can represent a goal, identify intermediate steps, evaluate possible actions, anticipate consequences, and revise its plan when new evidence becomes available.
+
+Let \(s_t\) represent the system’s current state, \(G\) its objective, and \(\mathcal{A}\) the set of available actions. The system constructs a plan
+
+\begin{equation}\label{eq5}
+\Pi_t=(a_t,a_{t+1},\ldots,a_{t+k})
+\end{equation}
+
+intended to transform the current state into one satisfying the goal:
+
+\begin{equation}\label{eq6}
+s_t
+\xrightarrow{\Pi_t}
+s_{t+k}
+\approx G.
+\end{equation}
+
+When an action produces an unexpected observation \(o_{t+1}\), a deliberative system can update its representation of the problem and generate a revised plan:
+
+\begin{equation}\label{eq7}
+\Pi_{t+1}
+=
+\operatorname{Revise}
+\left(
+\Pi_t,o_{t+1},G
+\right).
+\end{equation}
+
+Contemporary language-model agents have demonstrated elements of this capacity by interleaving reasoning with environment-directed actions, consulting external information, using software tools, and modifying plans in response to observations \cite{yao2023react}. These demonstrations do not establish human-equivalent general reasoning, but they provide empirical evidence that LLM-based systems can perform nontrivial forms of goal-directed deliberation.
+
+Within this hierarchy, reasoning is not defined as the mere production of a fluent explanation. It requires an observable relationship among a goal, intermediate decisions, actions, feedback, and plan revision. Level 2 is therefore attributed only when the system’s deliberative process contributes to successful behavior across appropriately controlled tasks.
+
+Level 2 asks:
+
+\textit{What sequence of actions should be taken to achieve the current objective?}
+
+\subsection{Level 3: Adaptive Autonomous Consciousness}
+
+Level 3 introduces sustained autonomy and self-directed adaptation. A Level-2 system may construct a plan when explicitly prompted, while a Level-3 system can continue pursuing an objective across time, monitor its own performance, diagnose failures, modify its strategy, and determine which intermediate tasks should be attempted next with reduced step-by-step human direction.
+
+Let the system maintain a policy \(\pi_t\), an episodic memory \(M_t\), and a performance signal \(F_t\). Following an unsuccessful or suboptimal outcome, it generates an internal evaluation:
+
+\begin{equation}\label{eq8}
+q_t
+=
+\operatorname{Evaluate}
+\left(
+\pi_t,M_t,F_t,G
+\right),
+\end{equation}
+
+and uses this evaluation to produce an adapted strategy:
+
+\begin{equation}\label{eq9}
+\pi_{t+1}
+=
+\operatorname{Adapt}
+\left(
+\pi_t,q_t,M_t
+\right).
+\end{equation}
+
+Research on reflective language agents has shown that performance can improve when agents interpret feedback, preserve linguistic reflections in memory, and use those reflections to guide subsequent attempts \cite{shinn2023reflexion}. Related work has explored iterative improvement through generated trajectories, environmental feedback, self-distillation, and reinforcement-based refinement \cite{aksitov2023restreact}.
+
+The term \textbf{self-improvement} must nevertheless be used precisely. Improvement through memory, reflection, tool creation, prompt modification, or strategy revision is not equivalent to unrestricted autonomous modification of the model’s underlying parameters. Level 3 includes these behavioral forms of adaptation but does not require that a deployed system independently rewrite its neural weights.
+
+A Level-3 system must therefore demonstrate more than isolated error correction. It must preserve goals or relevant state across multiple steps, assess the consequences of its prior actions, and alter its future behavior on the basis of that assessment.
+
+Level 3 asks:
+
+\textit{How should I evaluate and improve my own strategy while continuing to pursue the objective?}
+
+\subsection{Level 4: Metacognitive Supervisory Consciousness}
+
+Level 4 moves from the regulation of one agent’s behavior to the supervision of a distributed cognitive system. At this level, a supervisory component coordinates a swarm or organization of specialized agents that may possess different tools, memories, roles, or problem-solving capabilities.
+
+Let
+
+\begin{equation}\label{eq10}
+\mathcal{A}
+=
+\{A_1,A_2,\ldots,A_n\}
+\end{equation}
+
+denote a set of subordinate agents, and let \(S\) denote a supervisor. The supervisor maintains a higher-order representation
+
+\begin{equation}\label{eq11}
+M_S
+=
+\operatorname{Model}
+\left(
+A_1,A_2,\ldots,A_n,G,\mathcal{E}
+\right),
+\end{equation}
+
+where \(G\) is the global objective and \(\mathcal{E}\) represents relevant environmental conditions. Using this representation, the supervisor may decompose objectives, assign roles, allocate resources, inspect intermediate results, detect conflicts, terminate ineffective processes, and synthesize the agents’ outputs:
+
+\begin{equation}\label{eq12}
+O
+=
+S
+\left(
+A_1(o_1),A_2(o_2),\ldots,A_n(o_n)
+\right).
+\end{equation}
+
+The supervisor is not merely another agent issuing commands. It performs a metacognitive function by reasoning about the behavior, limitations, uncertainty, and coordination of the system as a whole. It must distinguish local agent success from global task success and intervene when the activity of individual agents ceases to advance the collective objective.
+
+This architecture can be compared functionally—but not anatomically—to executive control in the human brain. Human cognition depends on interacting and distributed neural networks rather than a single isolated “controller” located entirely within one brain region. Accordingly, the artificial supervisor should be understood as a computational analogue of higher-order coordination, not as a literal reproduction of the frontal lobe or any single biological structure.
+
+Level 4 asks:
+
+\textit{How should a higher-order controller monitor and coordinate a collection of specialized cognitive processes?}
+
+\subsection{Level 5: Societal or Inter-System Consciousness}
+
+Level 5 extends the unit of analysis from one supervised cognitive hierarchy to a society of independently supervised hierarchies. Let
+
+\begin{equation}\label{eq13}
+H_i=(S_i,\mathcal{A}_i)
+\end{equation}
+
+represent a cognitive organization in which supervisor \(S_i\) coordinates a local swarm of agents \(\mathcal{A}_i\). A Level-5 system is then composed of multiple such organizations:
+
+\begin{equation}\label{eq14}
+\mathcal{H}
+=
+\{H_1,H_2,\ldots,H_m\}.
+\end{equation}
+
+Each hierarchy may possess its own goals, information, resources, policies, and internal division of labor. Their supervisors must consequently interact not only with the external environment but also with other supervisory systems.
+
+Mere message exchange is insufficient for Level 5. Each supervisor must construct and continually update models of the other hierarchies’ capabilities, objectives, commitments, reliability, and probable future behavior. The supervisors must be able to negotiate partially competing goals, coordinate shared plans, allocate resources, form and revise agreements, establish norms, resolve conflicts, and adapt their local swarms in response to collective decisions.
+
+This process can be represented as
+
+\begin{equation}\label{eq15}
+\Omega_t
+=
+\Gamma
+\left(
+H_1,\ldots,H_m;
+G_1,\ldots,G_m;
+N_t;
+R_t;
+\mathcal{E}_t
+\right),
+\end{equation}
+
+where \(G_i\) denotes the local objective of hierarchy \(H_i\), \(N_t\) denotes shared or negotiated norms, \(R_t\) denotes available resources, and \(\Omega_t\) represents the resulting collective behavior.
+
+This architecture functionally resembles interaction among humans in society. A human individual contains multiple specialized cognitive processes coordinated within a relatively unified organism, while societies consist of many such individuals who communicate, cooperate, compete, establish institutions, and construct shared models of one another. Empirical research has identified a measurable collective-intelligence factor in human groups, suggesting that group performance cannot be predicted solely from the intelligence of the group’s most capable individual \cite{woolley2010collective}. Research involving LLM-based agent societies has likewise begun to examine collaboration, confrontation, negotiation, conformity, and consensus among interacting artificial agents \cite{zhang2023collaboration,lan2023society}.
+
+We therefore define \textbf{Level-5 functional consciousness} as the capacity of multiple supervised cognitive hierarchies to model one another, regulate their respective internal swarms, negotiate collective objectives, and generate adaptive social behavior at the system-of-systems level.
+
+This definition does not require the complete society to possess a single phenomenal point of view. Human society is not ordinarily assumed to constitute one unified experiencing subject, and communication among artificial hierarchies would not by itself establish the existence of an artificial “group mind.” Instead, Level 5 denotes \textbf{societal functional consciousness}: cognition expressed through recursive social modeling, distributed governance, negotiation, norm formation, and coordinated collective action.
+
+Level 5 asks:
+
+\textit{How should multiple supervised cognitive systems understand, negotiate with, and coordinate one another?}
+
+\subsection{Summary of the Hierarchy}
+
+The proposed hierarchy can be summarized through five progressively expanding questions:
+
+\begin{enumerate}
+\item \textbf{Level 1 — Affective-relational consciousness:} What is the other participant probably feeling?
+\item \textbf{Level 2 — Deliberative consciousness:} What sequence of actions should be taken?
+\item \textbf{Level 3 — Adaptive autonomous consciousness:} How should the system evaluate and improve its own strategy?
+\item \textbf{Level 4 — Metacognitive supervisory consciousness:} How should a supervisor coordinate a collection of specialized agents?
+\item \textbf{Level 5 — Societal consciousness:} How should multiple supervised cognitive hierarchies understand, negotiate with, and coordinate one another?
+\end{enumerate}
+
+The hierarchy expands the locus of functional consciousness from interpersonal interpretation to internal deliberation, adaptive self-regulation, organizational supervision, and finally societal coordination. These levels should not be regarded as evidence of a predetermined evolutionary sequence, nor should they be treated as a universally accepted scientific taxonomy. They constitute a proposed operational framework through which increasingly complex forms of artificial cognition can be stated as testable behavioral and architectural requirements.
+
+Several constituent capabilities have already been demonstrated: LLMs can perform sentiment and emotion analysis; language agents can combine reasoning with action; reflective systems can use feedback to improve later attempts; and multi-agent architectures can distribute tasks among specialized components. Research on ReAct and Reflexion provides particularly strong evidence for reasoning/action integration and feedback-based behavioral improvement, while research on collective intelligence supports treating coordinated group performance as a distinct level of analysis.
+
+However, no present demonstration establishes all five levels simultaneously, and none of these functional achievements independently proves phenomenal consciousness. The framework instead provides a disciplined vocabulary for identifying what an artificial system can observe, infer, regulate, coordinate, and socially organize without converting every advanced capability into an unsupported claim about subjective experience.

@@ -1,0 +1,94 @@
+\section{Modalities of Consciousness}
+
+The preceding hierarchy characterizes consciousness according to the functional organization of a cognitive system: affective modeling, deliberation, adaptation, metacognitive supervision, and societal coordination. A separate question concerns the modalities through which such a system obtains information. Vision, audition, touch, proprioception, language, and other sensory or representational channels determine how an entity encounters its environment, but they should not be confused with the level of consciousness exhibited by that entity.
+
+A human being may lose vision, hearing, or both without thereby ceasing to be conscious. A blind person can obtain spatial, linguistic, and social information through audition, touch, Braille, and assistive technologies. A deaf person can interact through vision, written language, sign language, and tactile signals. A person with combined visual and auditory impairments may still perceive and communicate through touch, bodily sensation, memory, and symbolic systems. These cases demonstrate that consciousness is not intrinsically dependent upon any single sensory channel.
+
+Research on sensory substitution provides empirical support for this distinction. Visual information can be transformed into tactile patterns that blind participants learn to interpret, demonstrating that environmental structure ordinarily conveyed through vision can become accessible through touch \cite{bachyrita1969vision}. Neuroimaging studies of early-blind Braille readers have further shown that tactile reading can recruit cortical regions ordinarily associated with visual processing \cite{sadato1996activation}. These findings suggest that the functional interpretation of information is not permanently bound to the physical channel through which that information normally arrives. The brain can reorganize how information is processed while preserving the individual's capacity to perceive, learn, reason, and act.
+
+We therefore propose the following lemma:
+
+\begin{quote}
+\textbf{Modality--Consciousness Independence Lemma.} Increasing the number of information modalities available to an entity does not, by itself, create consciousness or increase its level of consciousness. Additional modalities expand the channels through which an already organized cognitive system can obtain and interpret information about itself and its environment.
+\end{quote}
+
+Let the set of information modalities available to a system \(X\) be represented by
+
+\begin{equation}\label{eq16}
+\mathcal{M}(X)
+=
+\{m_1,m_2,\ldots,m_k\},
+\end{equation}
+
+where each \(m_i\) denotes a modality such as vision, audition, touch, proprioception, or language. At time \(t\), each available modality may contribute an information stream \(I_t^{(m_i)}\). The system constructs an internal estimate of its environment from some or all of these streams:
+
+\begin{equation}\label{eq17}
+\widehat{S}_t
+=
+F_X
+\left(
+I_t^{(m_1)},
+I_t^{(m_2)},
+\ldots,
+I_t^{(m_k)}
+\right),
+\end{equation}
+
+where \(F_X\) represents the system's information-integration process and \(\widehat{S}_t\) represents its estimated state of the world.
+
+When the modalities provide complementary information, adding another modality may improve the completeness, reliability, or precision of this estimate. Vision may reveal spatial structure that language does not explicitly describe; audition may provide temporal or directional evidence absent from a static image; touch may provide information about texture, temperature, pressure, or physical contact. Multimodal machine learning similarly seeks to combine complementary information from multiple representational channels to improve inference, robustness, and generalization \cite{baltrusaitis2019multimodal}.
+
+This improvement, however, concerns the \textbf{content and resolution of perception}, not the existence or level of consciousness itself. If \(L_C(X)\) denotes the functional-consciousness level of system \(X\), then increasing the number of available modalities does not logically imply an increase in that level:
+
+\begin{equation}\label{eq18}
+\left|
+\mathcal{M}(X')
+\right|
+>
+\left|
+\mathcal{M}(X)
+\right|
+\not\Rightarrow
+L_C(X')
+>
+L_C(X).
+\end{equation}
+
+A system equipped with cameras, microphones, tactile sensors, and language input may remain at a low functional level if it merely classifies incoming signals without constructing plans, evaluating itself, or coordinating other agents. Conversely, a system operating through text alone may exhibit affective modeling, multistep reasoning, adaptive strategy revision, or metacognitive supervision. The quantity of modalities therefore cannot serve as a direct measure of consciousness.
+
+The relationship is better represented through two independent profiles. Let
+
+\begin{equation}\label{eq19}
+\mathbf{P}(X)
+=
+\left(
+\mathbf{C}(X),
+\mathbf{M}(X)
+\right),
+\end{equation}
+
+where \(\mathbf{C}(X)\) describes the system's functional-consciousness capacities and \(\mathbf{M}(X)\) describes its available perceptual and communicative modalities. Two systems may occupy the same consciousness level while possessing different modality profiles, or they may possess similar modalities while exhibiting substantially different levels of functional organization.
+
+This distinction does not imply that modalities are irrelevant to cognitive development or behavior. Access to additional information can support learning, reduce uncertainty, reveal otherwise inaccessible environmental features, and provide more opportunities for planning and interaction. A richer modality profile may therefore help a system demonstrate its existing cognitive capacities more effectively. It may also supply information required for particular tasks. Nevertheless, information availability and cognitive organization remain conceptually distinct. Providing a system with another sensor does not automatically give it affective understanding, deliberative reasoning, adaptive autonomy, metacognitive supervision, or societal coordination.
+
+The same distinction applies to the removal of a modality. Losing vision changes the range and form of information immediately available to a person, but it does not necessarily reduce that person to a lower level of consciousness. Instead, the individual may rely more extensively upon remaining modalities, learned representations, memory, environmental structure, and sensory-substitution mechanisms. What changes is the pathway through which the world is accessed, not necessarily the organization of the conscious agent.
+
+Modalities should therefore be understood as \textbf{windows into the environment}, not as generators of consciousness. Additional windows may reveal more features, provide alternative perspectives, and produce a richer or more reliable model of the surrounding world. They do not, merely by their presence, create the observer looking through them.
+
+Accordingly, assessments of artificial consciousness should evaluate at least two separate questions:
+
+\begin{enumerate}
+\item \textbf{Modality profile:} Through which channels can the system acquire, integrate, and communicate information?
+\item \textbf{Functional-consciousness profile:} What forms of affective modeling, reasoning, adaptation, supervision, and social coordination can the system perform using the information available to it?
+\end{enumerate}
+
+This separation prevents multimodality from being mistaken for consciousness. A multimodal architecture may possess a broader field of information, yet remain functionally simple. A unimodal architecture may receive less diverse input, yet perform highly organized cognitive operations over that input. The level of consciousness proposed in this framework is therefore determined by the organization and regulation of information processing, not by the number or biological familiarity of the channels supplying the information.
+
+\section{Future Directions}
+In future work, we will investigate the integration of the proposed functional-consciousness framework with multimodal learning architectures in which an artificial agent has access to multiple sources of perceptual and contextual information. Such sources may include language, images, video, sound, spatial measurements, and other sensor-derived signals. The objective will be to determine how these modalities can be coordinated within a supervised agent hierarchy without conflating increased perceptual breadth with a higher level of consciousness.
+
+One possible architecture is to align each nonlinguistic modality with language or a shared language-compatible semantic representation. Vision–language models (VLMs) could translate visual observations into linguistic or semantically aligned representations, while sound–language models (SLLMs) could perform a corresponding function for speech, environmental audio, and other acoustic signals. These specialized cross-modal models would serve as perceptual agents that interpret modality-specific inputs and communicate their outputs to a supervisory large language model.
+
+Under this arrangement, the supervisor could remain primarily language-based while receiving structured representations from multiple specialized agents. The supervisory LLM could integrate the available evidence, identify agreements or conflicts among modalities, maintain system-level goals, formulate plans, allocate tasks, and request additional observations when uncertainty remains. Language would consequently function as a shared coordination medium through which otherwise heterogeneous perceptual systems contribute to a unified decision process.
+
+Future research should evaluate how much modality-specific information is preserved or lost when vision, sound, and other signals are translated into language. Some spatial, temporal, affective, or low-level perceptual properties may not be captured adequately through textual descriptions alone. It may therefore be necessary for the supervisor to access both linguistic summaries and modality-native embeddings or features. This investigation will examine whether language-aligned multimodal agents can support reliable cross-modal inference, adaptive planning, metacognitive supervision, and increasingly integrated forms of functional artificial consciousness.
